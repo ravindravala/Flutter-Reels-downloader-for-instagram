@@ -49,16 +49,18 @@ class _HomeState extends State<Home> {
                 child: GetBuilder(
                   init: downloadController,
                   builder: (_) => Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:[ Container(
-                      height: 200,
-                      width: 150,
-                      child: downloadController.path != null
-                          ? Container(
-                            child: GenrateVideoFrompath(downloadController.path ?? ""))
-                          : Center(child: Text("No recent download")),
-                    ),]
-                  ),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 200,
+                          width: 150,
+                          child: downloadController.path != null
+                              ? Container(
+                                  child: GenrateVideoFrompath(
+                                      downloadController.path ?? ""))
+                              : Center(child: Text("No recent download")),
+                        ),
+                      ]),
                 ),
               ),
               Padding(
@@ -94,8 +96,8 @@ class _HomeState extends State<Home> {
                       : Center(
                           child: InkWell(
                             onTap: () {
-                              downloadController
-                                  .downloadReal(urlController.text);
+                              downloadController.downloadReal(
+                                  urlController.text, context);
                             },
                             child: Container(
                               height: 40,
