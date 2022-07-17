@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                         color: Colors.grey[600],
                         fontSize: 12,
                       ),
-                      hintText: "Past instagram reel link here",
+                      hintText: "Paste instagram reel link here",
                       fillColor: Colors.white70),
                 ),
               ),

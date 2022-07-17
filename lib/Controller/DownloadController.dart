@@ -65,7 +65,7 @@ class DownloadController extends GetxController {
       var appDocDir = await getTemporaryDirectory();
       String savePath = appDocDir.path + "/temp.mp4";
       await dio.download(videoURLLLLL, savePath);
-      final result = await ImageGallerySaver.saveFile(savePath);
+      final result = await ImageGallerySaver.saveFile(savePath,isReturnPathOfIOS: true);
       print(result);
       return result["filePath"];
     }
