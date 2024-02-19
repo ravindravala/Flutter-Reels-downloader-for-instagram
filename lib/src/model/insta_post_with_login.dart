@@ -23,8 +23,9 @@ class InstaPostWithLogin {
 
 class Items {
   List<VideoVersions>? videoVersions;
+  ImageVersions2? imageVersions2;
 
-  Items({this.videoVersions});
+  Items({this.videoVersions, this.imageVersions2});
 
   Items.fromJson(Map<String, dynamic> json) {
     if (json['video_versions'] != null) {
@@ -33,6 +34,10 @@ class Items {
         videoVersions!.add(new VideoVersions.fromJson(v));
       });
     }
+
+    imageVersions2 = json["image_versions2"] == null
+        ? null
+        : ImageVersions2.fromJson(json["image_versions2"]);
   }
 
   Map<String, dynamic> toJson() {
@@ -71,4 +76,49 @@ class VideoVersions {
     data['id'] = this.id;
     return data;
   }
+}
+
+class ImageVersions2 {
+  final List<Candidate>? candidates;
+
+  ImageVersions2({
+    this.candidates,
+  });
+
+  factory ImageVersions2.fromJson(Map<String, dynamic> json) => ImageVersions2(
+        candidates: json["candidates"] == null
+            ? []
+            : List<Candidate>.from(
+                json["candidates"]!.map((x) => Candidate.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "candidates": candidates == null
+            ? []
+            : List<dynamic>.from(candidates!.map((x) => x.toJson())),
+      };
+}
+
+class Candidate {
+  final int? width;
+  final int? height;
+  final String? url;
+
+  Candidate({
+    this.width,
+    this.height,
+    this.url,
+  });
+
+  factory Candidate.fromJson(Map<String, dynamic> json) => Candidate(
+        width: json["width"],
+        height: json["height"],
+        url: json["url"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "width": width,
+        "height": height,
+        "url": url,
+      };
 }

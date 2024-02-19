@@ -1,20 +1,15 @@
 PODS:
-  - better_player (0.0.1):
-    - Cache (~> 6.0.0)
+  - cached_video_player (0.0.2):
     - Flutter
-    - GCDWebServer
-    - HLSCachingReverseProxyServer
-    - PINCache
-  - Cache (6.0.0)
+    - KTVHTTPCache (~> 2.0.0)
+  - CocoaAsyncSocket (7.6.5)
   - Flutter (1.0.0)
-  - GCDWebServer (3.5.4):
-    - GCDWebServer/Core (= 3.5.4)
-  - GCDWebServer/Core (3.5.4)
-  - HLSCachingReverseProxyServer (0.1.0):
-    - GCDWebServer (~> 3.5)
-    - PINCache (>= 3.0.1-beta.3)
   - image_gallery_saver (1.5.0):
     - Flutter
+  - KTVCocoaHTTPServer (1.0.0):
+    - CocoaAsyncSocket
+  - KTVHTTPCache (2.0.1):
+    - KTVCocoaHTTPServer
   - libwebp (1.2.1):
     - libwebp/demux (= 1.2.1)
     - libwebp/mux (= 1.2.1)
@@ -24,85 +19,68 @@ PODS:
   - libwebp/mux (1.2.1):
     - libwebp/demux
   - libwebp/webp (1.2.1)
-  - path_provider_ios (0.0.1):
+  - path_provider_foundation (0.0.1):
     - Flutter
-  - permission_handler_apple (9.0.4):
+    - FlutterMacOS
+  - permission_handler_apple (9.3.0):
     - Flutter
-  - PINCache (3.0.3):
-    - PINCache/Arc-exception-safe (= 3.0.3)
-    - PINCache/Core (= 3.0.3)
-  - PINCache/Arc-exception-safe (3.0.3):
-    - PINCache/Core
-  - PINCache/Core (3.0.3):
-    - PINOperation (~> 1.2.1)
-  - PINOperation (1.2.1)
   - video_thumbnail (0.0.1):
     - Flutter
     - libwebp
-  - wakelock (0.0.1):
-    - Flutter
   - webview_cookie_manager (0.0.1):
     - Flutter
   - webview_flutter_wkwebview (0.0.1):
     - Flutter
 
 DEPENDENCIES:
-  - better_player (from `.symlinks/plugins/better_player/ios`)
+  - cached_video_player (from `.symlinks/plugins/cached_video_player/ios`)
   - Flutter (from `Flutter`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
-  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - video_thumbnail (from `.symlinks/plugins/video_thumbnail/ios`)
-  - wakelock (from `.symlinks/plugins/wakelock/ios`)
   - webview_cookie_manager (from `.symlinks/plugins/webview_cookie_manager/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
 
 SPEC REPOS:
   trunk:
-    - Cache
-    - GCDWebServer
-    - HLSCachingReverseProxyServer
+    - CocoaAsyncSocket
+    - KTVCocoaHTTPServer
+    - KTVHTTPCache
     - libwebp
-    - PINCache
-    - PINOperation
 
 EXTERNAL SOURCES:
-  better_player:
-    :path: ".symlinks/plugins/better_player/ios"
+  cached_video_player:
+    :path: ".symlinks/plugins/cached_video_player/ios"
   Flutter:
     :path: Flutter
   image_gallery_saver:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
-  path_provider_ios:
-    :path: ".symlinks/plugins/path_provider_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
   video_thumbnail:
     :path: ".symlinks/plugins/video_thumbnail/ios"
-  wakelock:
-    :path: ".symlinks/plugins/wakelock/ios"
   webview_cookie_manager:
     :path: ".symlinks/plugins/webview_cookie_manager/ios"
   webview_flutter_wkwebview:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
 SPEC CHECKSUMS:
-  better_player: 2406bfe8175203c7a46fa15f9d778d73b12e1646
-  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  HLSCachingReverseProxyServer: 59935e1e0244ad7f3375d75b5ef46e8eb26ab181
+  cached_video_player: 9f225ed1c46bda0fe287b8288742329d441e2cc5
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
+  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
+  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
-  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
-  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
-  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
-  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
+  permission_handler_apple: 036b856153a2b1f61f21030ff725f3e6fece2b78
   video_thumbnail: c4e2a3c539e247d4de13cd545344fd2d26ffafd1
-  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
   webview_cookie_manager: eaf920722b493bd0f7611b5484771ca53fed03f7
   webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
 
 PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.13.0
